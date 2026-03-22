@@ -1,0 +1,23 @@
+# Binaries, compiled executables
+*_app
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+
+# Environment variables
+.env
+.env.*
+
+# Go workspace file
+go.work
+go.work.sum
+
+# Temporary files or IDEs
+.idea/
+.vscode/
+*.swp
+*DS_Store

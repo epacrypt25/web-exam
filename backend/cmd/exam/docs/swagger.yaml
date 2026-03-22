@@ -1,0 +1,113 @@
+basePath: /
+definitions:
+  models.CreateExamRequest:
+    properties:
+      class_id:
+        type: string
+      description:
+        type: string
+      title:
+        type: string
+    required:
+    - class_id
+    - title
+    type: object
+  models.Exam:
+    properties:
+      class_id:
+        type: string
+      created_at:
+        type: string
+      description:
+        type: string
+      id:
+        type: string
+      title:
+        type: string
+    type: object
+host: localhost:8083
+info:
+  contact: {}
+  description: This is the Exam Service API
+  title: Exam Microservice API
+  version: "1.0"
+paths:
+  /exams:
+    get:
+      consumes:
+      - application/json
+      description: Retrieve a list of exams for a specific class ID
+      parameters:
+      - description: Class ID
+        in: query
+        name: class_id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/models.Exam'
+            type: array
+        "400":
+          description: Bad Request
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      security:
+      - BearerAuth: []
+      summary: Get exams by class
+      tags:
+      - exam
+    post:
+      consumes:
+      - application/json
+      description: Create a new exam assigned to a class
+      parameters:
+      - description: Create Exam Request
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/models.CreateExamRequest'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            additionalProperties: true
+            type: object
+        "400":
+          description: Bad Request
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      security:
+      - BearerAuth: []
+      summary: Create a new exam
+      tags:
+      - exam
+securityDefinitions:
+  BearerAuth:
+    in: header
+    name: Authorization
+    type: apiKey
+swagger: "2.0"
