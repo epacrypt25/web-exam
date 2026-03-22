@@ -1,5 +1,13 @@
 # ExamApp Fullstack 🎓
 
+![Next.js](https://img.shields.io/badge/Next.js-v14.2.21-000000?style=for-the-badge&logo=next.js)
+![React](https://img.shields.io/badge/React-v18.3.1-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Tailwind](https://img.shields.io/badge/TailwindCSS-v3.4.17-38B2AC?style=for-the-badge&logo=tailwind-css)
+![Go](https://img.shields.io/badge/Go-v1.25.0-00ADD8?style=for-the-badge&logo=go&logoColor=white)
+![Echo](https://img.shields.io/badge/Echo-v4.15.1-black?style=for-the-badge)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-v1.12.0-336791?style=for-the-badge&logo=postgresql&logoColor=white)
+
+
 ExamApp is a modern, responsive, and robust full-stack application for managing and participating in online examinations. Built with a Go backend and a Next.js frontend, ExamApp delivers a seamless and aesthetically pleasing experience for both administrators and students.
 
 ## 🌟 UI/UX Design
@@ -14,6 +22,30 @@ The application utilizes a sleek, bright, and premium aesthetic focusing on clea
 - **Feedback & Interactions**: Provides state-driven animations including spinning loaders, hover translations (`-translate-y-1`), and interactive Toast notifications.
 
 ## 🚀 Application Flow
+
+```mermaid
+graph TD
+    A([Start]) --> B[Register / Login]
+    B --> C{Role?}
+    
+    %% Admin Flow
+    C -- Admin --> D[Admin Dashboard]
+    D --> E[Manage Classes]
+    D --> F[Manage Exams]
+    E -. "Assign Exams to Class" .-> F
+    F --> G[Add Questions]
+    
+    %% User Flow
+    C -- User --> H{Has Class?}
+    H -- No --> I[Select a Class]
+    I --> J[User Dashboard]
+    H -- Yes --> J
+    
+    J --> K[View Class Exams]
+    K --> L[Take Quiz / Timer Starts]
+    L --> M[Submit Exam]
+    M --> N(((View Score)))
+```
 
 ### 1. Authentication
 - **Register / Login**: Users can create an account and authenticate.
@@ -37,18 +69,18 @@ The application utilizes a sleek, bright, and premium aesthetic focusing on clea
 
 ## 🛠 Tech Stack
 
-**Frontend**:
-- Framework: Next.js (React)
-- Styling: Tailwind CSS
-- Icons: Lucide React
-- Routing & Data: Next App Router, Axios
+**Frontend** (Node.js Environment):
+- Framework: Next.js (`v14.2.21`) & React (`v18.3.1`)
+- Styling: Tailwind CSS (`v3.4.17`)
+- Icons: Lucide React (`v0.468.0`)
+- HTTP Client & Routing: Axios (`v1.7.9`) & Next App Router
 
-**Backend**:
-- Language: Go (1.23.6)
-- Web Framework: Echo
-- Database: PostgreSQL (pq driver)
-- Auth: JWT (JSON Web Tokens)
-- Documentation: Swagger (Go-Swagger/Echo-Swagger)
+**Backend** (Go Runtime Environment):
+- Language: Go (`v1.25.0`)
+- Web Framework: Echo (`v4.15.1`)
+- Database Driver: PostgreSQL (pq `v1.12.0`)
+- Auth: JWT (golang-jwt `v5.3.1`)
+- Documentation: Swagger (echo-swagger `v1.5.2` & swag `v1.16.6`)
 
 ## 📦 Setting Up Locally
 
