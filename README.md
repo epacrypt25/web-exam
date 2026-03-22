@@ -23,28 +23,49 @@ The application utilizes a sleek, bright, and premium aesthetic focusing on clea
 
 ## 🚀 Application Flow
 
-```mermaid
-graph TD
-    A([Start]) --> B[Register / Login]
-    B --> C{Role?}
-    
-    %% Admin Flow
-    C -- Admin --> D[Admin Dashboard]
-    D --> E[Manage Classes]
-    D --> F[Manage Exams]
-    E -. "Assign Exams to Class" .-> F
-    F --> G[Add Questions]
-    
-    %% User Flow
-    C -- User --> H{Has Class?}
-    H -- No --> I[Select a Class]
-    I --> J[User Dashboard]
-    H -- Yes --> J
-    
-    J --> K[View Class Exams]
-    K --> L[Take Quiz / Timer Starts]
-    L --> M[Submit Exam]
-    M --> N(((View Score)))
+```text
++-------------------------------------------------+
+|               Register / Login                  |
++-------------------------------------------------+
+                        |
+                        v
++-------------------------------------------------+
+|                  Role Check                     |
++-------------------------------------------------+
+         |                             |
+     [ Admin ]                       [ User ]
+         |                             |
+         v                             v
++-----------------+           +-------------------+
+| Admin Dashboard |           |    Has Class?     |
++-----------------+           +-------------------+
+  |            |                 |           |
+  v            v               [ No ]      [ Yes ]
++-------+ +----------+           |           |
+|Manage | | Manage   |           v           v
+|Classes| | Exams    |    +-------------+ +---------------+
++-------+ +----------+    | Join Class  | | User Dashboard|
+             |            +-------------+ +---------------+
+             v                               |
+        +---------+                          v
+        |   Add   |               +-------------------+
+        |Questions|               | View Class Exams  |
+        +---------+               +-------------------+
+                                             |
+                                             v
+                                  +-------------------+
+                                  | Take Quiz (Timer) |
+                                  +-------------------+
+                                             |
+                                             v
+                                  +-------------------+
+                                  |   Submit Exam     |
+                                  +-------------------+
+                                             |
+                                             v
+                                  +-------------------+
+                                  |  View Final Score |
+                                  +-------------------+
 ```
 
 ### 1. Authentication
