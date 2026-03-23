@@ -1,5 +1,5 @@
 <p align="center">
-  <strong># ExamApp Fullstack 🎓</strong>
+  <h1> ExamApp 🎓</h1>
 </p>
 
 ![Next.js](https://img.shields.io/badge/Next.js-v14.2.21-000000?style=for-the-badge&logo=next.js)
