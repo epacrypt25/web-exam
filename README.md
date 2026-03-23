@@ -1,4 +1,4 @@
-# ExamApp Fullstack 🎓
+<center># ExamApp Fullstack 🎓</center>  
 
 ![Next.js](https://img.shields.io/badge/Next.js-v14.2.21-000000?style=for-the-badge&logo=next.js)
 ![React](https://img.shields.io/badge/React-v18.3.1-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
