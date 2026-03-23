@@ -1,11 +1,13 @@
 <h1 align="center">ExamApp 🎓</h1>
 
-![Next.js](https://img.shields.io/badge/Next.js-v14.2.21-000000?style=for-the-badge&logo=next.js)
-![React](https://img.shields.io/badge/React-v18.3.1-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-![Tailwind](https://img.shields.io/badge/TailwindCSS-v3.4.17-38B2AC?style=for-the-badge&logo=tailwind-css)
-![Go](https://img.shields.io/badge/Go-v1.25.0-00ADD8?style=for-the-badge&logo=go&logoColor=white)
-![Echo](https://img.shields.io/badge/Echo-v4.15.1-black?style=for-the-badge)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-v1.12.0-336791?style=for-the-badge&logo=postgresql&logoColor=white)
+<p align="center">
+  <img src="https://img.shields.io/badge/Next.js-v14.2.21-000000?style=for-the-badge&logo=next.js" />
+  <img src="https://img.shields.io/badge/React-v18.3.1-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
+  <img src="https://img.shields.io/badge/TailwindCSS-v3.4.17-38B2AC?style=for-the-badge&logo=tailwind-css" />
+  <img src="https://img.shields.io/badge/Go-v1.25.0-00ADD8?style=for-the-badge&logo=go&logoColor=white" />
+  <img src="https://img.shields.io/badge/Echo-v4.15.1-black?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/PostgreSQL-v1.12.0-336791?style=for-the-badge&logo=postgresql&logoColor=white" />
+</p>
 
 
 ExamApp is a modern, responsive, and robust full-stack application for managing and participating in online examinations. Built with a Go backend and a Next.js frontend, ExamApp delivers a seamless and aesthetically pleasing experience for both administrators and students.
